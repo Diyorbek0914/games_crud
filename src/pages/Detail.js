@@ -67,7 +67,7 @@ export default function DetailRoute() {
                        rounded-full
                        text-base text-body-color
                        font-medium
-                       hover:border-primary hover:bg-primary text-blue-700 hover:text-white hover:bg-blue-800
+                       hover:border-primary hover:bg-primary text-blue-700 hover:text-white hover:bg-blue-800 focus:bg-blue-700
                        transition"
               >
                 UPDATE

@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 function UpdateRoute() {
   const [titleinp, setTitleInp] = useState("");
   const [descinp, setDescInp] = useState("");
-  const [relaseinp, setRelaseInp] = useState("");
   const [imageinp, setImageInp] = useState("");
   const [developinp, setDevelopInp] = useState("");
 
@@ -21,7 +20,6 @@ function UpdateRoute() {
       .then((res) => {
         setTitleInp(res.data.title);
         setDescInp(res.data.description);
-        setRelaseInp(res.data.relaseinp);
         setImageInp(res.data.imageURL);
         setDevelopInp(res.data.developer);
         // setData(res.data);
@@ -36,9 +34,6 @@ function UpdateRoute() {
   const ondescinp = (e) => {
     setDescInp(e.target.value);
   };
-  const onrelaseinp = (e) => {
-    setRelaseInp(e.target.value);
-  };
   const onimageinp = (e) => {
     setImageInp(e.target.value);
   };
@@ -48,13 +43,12 @@ function UpdateRoute() {
 
   const onCreate = (e) => {
     e.preventDefault();
-    console.log(titleinp, descinp, relaseinp, imageinp, developinp);
+    console.log(titleinp, descinp, imageinp, developinp);
 
     axios
       .put(`http://localhost:3000/games/${params.id}`, {
         title: titleinp.trim(),
         description: descinp.trim(),
-        "release-date": relaseinp.trim(),
         imageURL: imageinp.trim(),
         developer: developinp.trim(),
       })
@@ -87,14 +81,6 @@ function UpdateRoute() {
           <input
             onChange={ondescinp}
             value={descinp}
-            className="rounded w-full shadow"
-          />
-        </label>
-        <label>
-          Release-date{" "}
-          <input
-            onChange={onrelaseinp}
-            value={relaseinp}
             className="rounded w-full shadow"
           />
         </label>

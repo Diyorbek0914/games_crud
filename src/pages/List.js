@@ -25,7 +25,7 @@ function ListRoute() {
 
   return (
     <div className="m-10 space-y-8 font-semibold">
-      <h1 className="text-2xl text-green-800">List route {currentUser.name}</h1>
+      <h1 className="text-2xl text-teal-600">List route games {currentUser.name}</h1>
       <div className="flex space-x-5 text-white font-semibold">
         <Link
           className="bg-teal-500 hover:bg-teal-600 py-2 px-5"

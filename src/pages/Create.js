@@ -9,7 +9,6 @@ function CreateRouter() {
 
   const [titleinp, setTitleInp] = useState("");
   const [descinp, setDescInp] = useState("");
-  const [relaseinp, setRelaseInp] = useState("");
   const [imageinp, setImageInp] = useState("");
   const [developinp, setDevelopInp] = useState("");
 
@@ -18,9 +17,6 @@ function CreateRouter() {
   };
   const ondescinp = (e) => {
     setDescInp(e.target.value);
-  };
-  const onrelaseinp = (e) => {
-    setRelaseInp(e.target.value);
   };
   const onimageinp = (e) => {
     setImageInp(e.target.value);
@@ -31,13 +27,12 @@ function CreateRouter() {
 
   const onCreate = (e) => {
     e.preventDefault();
-    console.log(titleinp, descinp, relaseinp, imageinp, developinp);
+    console.log(titleinp, descinp, imageinp, developinp);
 
     axios
       .post("http://localhost:3000/games", {
         title: titleinp.trim(),
         description: descinp.trim(),
-        "release-date": relaseinp.trim(),
         imageURL: imageinp.trim(),
         developer: developinp.trim(),
       })
@@ -70,14 +65,6 @@ function CreateRouter() {
           <input
             onChange={ondescinp}
             value={descinp}
-            className="rounded w-full shadow"
-          />
-        </label>
-        <label>
-          Release-date{" "}
-          <input
-            onChange={onrelaseinp}
-            value={relaseinp}
             className="rounded w-full shadow"
           />
         </label>
